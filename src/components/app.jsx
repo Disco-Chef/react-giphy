@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import giphy from 'giphy-api';
 
-import SearchBar from './search_bar.jsx';
-import Gif from './gif.jsx';
-import GifList from './gif_list.jsx';
+import SearchBar from './search_bar';
+import Gif from './gif';
+import GifList from './gif_list';
 
 
 class App extends Component {
@@ -11,14 +11,14 @@ class App extends Component {
     super(props);
     this.state = {
       gifs: [],
-      selectedGifId:"McsAo5zxmBKXfVPo9E"
-    }
+      selectedGifId: "McsAo5zxmBKXfVPo9E"
+    };
 
     this.search("hello");
   }
 
   search = (query) => {
-    giphy(ENV['MAPBOX_API_KEY']).search({
+    giphy('odcIDuRdTag3gGUNA1RtLjx53GSEY8jx').search({
       q: query,
       rating: 'g',
       limit: 10
@@ -31,15 +31,15 @@ class App extends Component {
 
   render() {
     const gifs = [
-      { id: "McsAo5zxmBKXfVPo9E"},
-      { id: "QAJ7Y3K3foTktDPJRq"}
+      { id: "McsAo5zxmBKXfVPo9E" },
+      { id: "QAJ7Y3K3foTktDPJRq" }
     ];
     return (
       <div>
         <div className="left-scene">
-          <SearchBar searchFunction={this.search}/>
+          <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={this.state.selectedGifIdl} />
+            <Gif id={this.state.selectedGifId} />
           </div>
         </div>
         <div className="right-scene">
