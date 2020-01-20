@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Gif from './gif.jsx';
+import Gif from './gif';
 
 class GifList extends Component {
   renderList = () => {
